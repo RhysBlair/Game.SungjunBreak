@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://yh5qa647xu2f"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_352yi"]
+[ext_resource type="PackedScene" uid="uid://xytgfisw1x0y" path="res://sungjun.tscn" id="1_iml18"]
+[ext_resource type="PackedScene" uid="uid://bjmdq3uvbr2wx" path="res://level_1.tscn" id="2_431wl"]
+[ext_resource type="PackedScene" uid="uid://3vd6b5anf0ju" path="res://truck.tscn" id="4_uaax5"]
+
+[sub_resource type="Curve2D" id="Curve2D_nmum8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 992, 648, 0, 0, 0, 0, 14, 646)
+}
+point_count = 2
+
+[node name="Main" type="Node"]
+script = ExtResource("1_352yi")
+
+[node name="Level1" parent="." instance=ExtResource("2_431wl")]
+
+[node name="Sungjun" parent="Level1" instance=ExtResource("1_iml18")]
+
+[node name="truck" parent="Level1" instance=ExtResource("4_uaax5")]
+position = Vector2(987, 644)
+
+[node name="truckpath" type="Path2D" parent="Level1"]
+curve = SubResource("Curve2D_nmum8")
