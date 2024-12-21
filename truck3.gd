@@ -20,9 +20,8 @@ func _on_area_entered(area):
 		destroy()
 		$AnimatedSprite2D.animation = "destroy()"
 		
-		
 func _on_body_entered(body) -> void:
-	print("12345")
+	print("수정")
 	if body.is_in_group("trucks"):
 		destroy()
 		$AnimatedSprite2D.animation = "destroy()"
