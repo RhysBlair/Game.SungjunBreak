@@ -1,8 +1,11 @@
 res://sungjun.tscn
-res://main.gd
-res://truck3.gd
 res://data.gd
-res://game_start.gd
 res://jun.gd
-res://truck2.gd
+res://main.tscn
+res://level_1.tscn
+res://main.gd
+res://truck.tscn
 res://truck.gd
+res://game_start.gd
+res://truck2.gd
+res://truck3.gd
