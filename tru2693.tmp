@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://culupivua0put"]
+
+[ext_resource type="Script" path="res://truck.gd" id="1_fpwmv"]
+[ext_resource type="Texture2D" uid="uid://dj3wnioujvpvh" path="res://asset/truck_nomal.png" id="1_rds2j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjidx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rds2j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrfti"]
+size = Vector2(54, 29)
+
+[node name="truck" type="CharacterBody2D"]
+script = ExtResource("1_fpwmv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_hjidx")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_yrfti")

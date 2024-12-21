@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://o5c1e6o6ljex"]
+
+[ext_resource type="Script" path="res://jun.gd" id="1_vlmxb"]
+[ext_resource type="Texture2D" uid="uid://cyknhudn5mbpu" path="res://asset/jun_body1.png" id="1_ycbjk"]
+[ext_resource type="Texture2D" uid="uid://doptpntsne6ky" path="res://asset/jun_body2.png" id="2_f0rct"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd42m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ycbjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f0rct")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ffwqm"]
+radius = 21.095
+
+[node name="jun" type="CharacterBody2D"]
+script = ExtResource("1_vlmxb")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xd42m")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ffwqm")
